@@ -1,0 +1,16 @@
+Welcome to FamilyFriday!
+
+Please clone this repo to get started.
+
+To run the app in localhost, ensure that you have ruby (minimum version 2.1.5)
+and rails (minimum version 4.2.3) installed,
+and install all needed dependencies found in the Gemfile.
+This can be done by running `bundle install` from within the cloned directory.
+
+After installation is complete, to load the app, run rails s from your terminal.
+Then navigate to http://localhost:3000/families in your browser.
+
+Begin by adding members—the more the merrier your Family Friday will be!
+
+After adding members, generate families for the members to socialize in at your
+next Family Friday gathering!

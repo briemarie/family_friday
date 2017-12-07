@@ -1,0 +1,14 @@
+<div class="header">
+  <h1>Add a new member</h1>
+</div>
+
+<%= form_for @member do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Add Member" %>
+<% end %>
+
+<div>
+  <button><a href="/members">Back to Members</a></button>
+  <button><a href="/families">Back to Families</a></button>
+</div>

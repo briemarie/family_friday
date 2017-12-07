@@ -1,0 +1,32 @@
+<div class="header">
+  <h1>Family Friday</h1>
+  <% if @members.length > 2 %>
+    <div class="cta">
+      <p>Generate this week's families</p>
+      <button><a href="/families/generate_families">Get Families</a></button>
+    </div>
+  <% else %>
+    <h3>To get started, please add at least 3 members.</h3>
+  <% end %>
+  <div class="cta">
+    <p>Add a new member</p>
+    <button><a href="/members/new">Add Member</a></button>
+  </div>
+</div>
+
+<% if @families != nil %>
+  <% @families.each_with_index do |family, index| %>
+  <div class="table-wrapper">
+    <table>
+      <caption>Family <%= index + 1 %></caption>
+      <tbody>
+        <tr>
+          <% family.members.each do |member| %>
+            <td><%= member %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <% end %>
+<% end %>

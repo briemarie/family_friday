@@ -1,0 +1,23 @@
+<div class="header">
+  <h1>Members</h1>
+</div>
+
+<table>
+  <thead>
+    <th>Member</th>
+    <th>Added On</th>
+  <thead>
+  <tbody>
+  <% @members.each do |m| %>
+    <tr>
+      <td><%= m.name %></td>
+      <td><%= m.created_at %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div>
+  <button><a href="/members/new">Add Member</a></button>
+  <button><a href="/families">Back to Families</a></button>
+</div>

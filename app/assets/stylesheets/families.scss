@@ -1,0 +1,46 @@
+h1, h3, p, th, td, caption {
+  font-family: "Arial";
+}
+button {
+  width:200px;
+  height:40px;
+  background-color:#42a7f4;
+  text-align:center;
+  outline:none;
+  border:none;
+}
+a {
+  color:#fff;
+  line-height:38px;
+  text-decoration:none;
+  outline:none;
+  border:none;
+  font-size: 14px;
+}
+.header {
+  margin: auto;
+  width: 70%;
+  text-align: center;
+}
+.cta {
+  display: inline-block;
+  margin: 0 50px;
+}
+.table-wrapper {
+  display: inline-block;
+  margin: 30px;
+
+  caption {
+    font-weight: bold;
+  }
+  td {
+    display: block;
+  }
+}
+.flash {
+  width: 50%;
+  margin: auto;
+  h3 {
+    color: #eb212e;
+  }
+}
