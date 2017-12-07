@@ -7,8 +7,11 @@ and rails (minimum version 4.2.3) installed,
 and install all needed dependencies found in the Gemfile.
 This can be done by running `bundle install` from within the cloned directory.
 
-After installation is complete, to load the app, run rails s from your terminal.
-Then navigate to http://localhost:3000/families in your browser.
+After installation is complete, ensure that the database is set up by running
+`rake db:schema:load`.
+
+To start the app, run `rails s`, then navigate to
+http://localhost:3000/families in your browser.
 
 Begin by adding members—the more the merrier your Family Friday will be!
 
