@@ -17,29 +17,25 @@ class FamiliesController < ApplicationController
     # shuffle the list of ids and then split into families - we want
     # families be as even as possible, so we check if they're equally divisble
     # if not, we split into families of 3 and carry the remainder into another
-    if divisible_by_four?(member_ids.length)
-      fams = member_ids.shuffle.each_slice(4).to_a
-    elsif divisible_by_five?(member_ids.length)
-      fams = member_ids.shuffle.each_slice(5).to_a
-    else
-      fams = member_ids.shuffle.each_slice(3).to_a
-    end
+    divider = divisible_by(member_ids.length)
+    member_groups = member_ids.shuffle.each_slice(divider).to_a
 
-    outlier = fams.last
-    if outlier != nil && outlier.length < 3
-      outlier.each do |o|
-        fams.first << o
+    outlier = member_groups.last
+    if !outlier.nil? && outlier.length < 3
+      member_groups.first << outlier.first
+      if !outlier.second.nil?
+        member_groups.second << outlier.second
       end
-      fams = fams - fams.pop(1)
+      member_groups.pop(1)
     end
 
     gathering = Gathering.new
 
-    fams.each do |fam|
+    member_groups.each do |group|
       family = Family.new
-      fam.each do |member_id|
-        m = Member.find(member_id)
-        family.members << m.name
+      group.each do |member_id|
+        member = Member.find(member_id)
+        family.members << member.name
       end
 
       family.save!

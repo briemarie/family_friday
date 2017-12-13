@@ -28,10 +28,12 @@ a {
 }
 .table-wrapper {
   display: inline-block;
+  vertical-align: top;
   margin: 30px;
 
   caption {
     font-weight: bold;
+    text-align: left;
   }
   td {
     display: block;
@@ -43,4 +45,7 @@ a {
   h3 {
     color: #eb212e;
   }
+}
+table {
+  width: 100px;
 }
