@@ -6,12 +6,19 @@
   <thead>
     <th>Member</th>
     <th>Added On</th>
+    <th>Present</th>
   <thead>
   <tbody>
-  <% @members.each do |m| %>
+  <% @members.each do |member| %>
     <tr>
-      <td><%= m.name %></td>
-      <td><%= m.created_at %></td>
+      <td><%= member.name %></td>
+      <td><%= member.created_at %></td>
+      <%= simple_form_for member do |f| %>
+        <td>
+          <%= f.input :present, label: false %>
+          <%= f.button :submit %>
+        </td>
+      <% end %>
     </tr>
   <% end %>
   </tbody>

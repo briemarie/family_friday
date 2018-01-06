@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206205800) do
+ActiveRecord::Schema.define(version: 20180105211632) do
 
   create_table "families", force: :cascade do |t|
     t.text     "members"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20171206205800) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "present"
   end
 
 end
